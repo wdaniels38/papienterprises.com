@@ -45,7 +45,7 @@ class Admin::PhotosController < ApplicationController
       respond_to do |format|
         if @photo.save
           flash[:notice] = 'Photo was successfully created.'
-          format.html { redirect_to(@photo) }
+          format.html { redirect_to([:admin, @photo]) }
           format.xml  { render :xml => @photo, :status => :created, :location => @photos }
         else
           format.html { render :action => "new" }
