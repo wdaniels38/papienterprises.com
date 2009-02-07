@@ -1,0 +1,18 @@
+%div#content
+  = error_messages_for :photo
+  - form_for([:admin, @photo], :html => { :multipart => true }) do |f|
+    %table
+      %tr
+        %td= f.label :title
+        %td= f.text_field :caption
+      %tr
+        %td= f.label :description
+        %td= f.text_field :description
+      %tr
+        %td= f.label :image
+        %td= f.file_field :uploaded_data, {:style => 'color:#fff'}  
+      %tr
+        %td= f.submit "Create"
+    
+  %span.hint 
+    %p We accept JPEG, GIF, or PNG files up to 500 KB. 

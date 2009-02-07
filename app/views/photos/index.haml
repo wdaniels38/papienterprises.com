@@ -1,0 +1,8 @@
+= javascript_tag "window.onload=function(){initLightbox();};" 
+%div#content
+  
+  %h1 Papi's Photo Gallery
+
+  - for photo in @photos
+    = link_to image_tag(photo.public_filename(:thumb)), photo.public_filename, :rel => 'lightbox[set]', :title => photo.caption, :alt => photo.description
+  %p= will_paginate @photos

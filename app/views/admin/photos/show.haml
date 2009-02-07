@@ -1,0 +1,12 @@
+%div#content
+  = link_to 'Back', admin_photos_path
+  %p 
+    Title: 
+    = @photo.caption 
+  %p
+    %img{:src => @photo.public_filename}
+
+  %p
+    %img{:src => @photo.public_filename(:thumb)}
+ 
+  
