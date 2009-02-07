@@ -1,15 +1,14 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "papienterprises.com"
+set :repository,  "git@github.com:wdaniels38/papienterprises.com.git"
+set :user, "will"
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
+set :scm_username, "wdaniels38"
+set :scm, :git
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
+set :deploy_via, :remote_cache
+set :deploy_to, "/var/www/#{application}"
+set :use_sudo, false
 
-role :app, "your app-server here"
-role :web, "your web-server here"
-role :db,  "your db-server here", :primary => true
+role :app, "209.20.83.218:10022"
+role :web, "209.20.83.218:10022"
+role :db,  "209.20.83.218:10022", :primary => true
